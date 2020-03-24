@@ -15,3 +15,9 @@ html {
   body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
+
+  #background {
+      background-image: url(https://images.designtrends.com/wp-content/uploads/2015/11/06085041/Ferrari-Car-Back-View-Backgrounds.jpg);
+      height: auto;
+      width: auto;
+  }

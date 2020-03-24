@@ -104,6 +104,6 @@ Will Gibson
 
 [LinkedIn](https://www.linkedin.com/in/wtgibson/)
 
-[GitHub](https://github.com/wtgibson/1-code-refactor)
+[GitHub](https://github.com/wtgibson/4-code-quiz)
 
-Special thanks to Mahisha Gunasekaran, Kerwin Hy, and Jeremy Cantwell for their input and assistance with the assignment!
+Special thanks to Mahisha Gunasekaran, Kerwin Hy, and Jeremy Cantwell, and Brad Davis for their input and assistance with the assignment!

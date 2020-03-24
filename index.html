@@ -14,32 +14,35 @@
 
   </head>
   <body>
-    <div class="container-fluid h1 border text-center" style="width: 100%;">
+    <div class="container-fluid h1 border text-center p-5" style="width: 100%;">
         Car Quiz
     </div>
     <!-- Card -->
-    <div class="container-fluid bg-light py-5 border">
+    <div class="container-fluid bg-light py-5 border" id="background">
         <div class="row pb-5">
             <div class="col-3"></div>
             <div class="card bg-white py-4 col-6">
-                <div class="h2 text-dark text-center">Time:</div>
-                <div class="h2 text-dark text-center">Question
+                <div class="h2 text-dark text-center" id="time">Time:
+                    <hr>
+                </div>
+                <div class="h2 text-dark text-center" id="question">Question
                     <hr>
                 </div>
                 <div class="card">
-                    <div class="secure-password-box border rounded-2 card-body text-center text-secondary p-5">
+                    <div class="border rounded-2 card-body text-center text-secondary p-5" id="answers">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item py-5">Answer 1</li>
-                            <li class="list-group-item py-5">Answer 2</li>
-                            <li class="list-group-item py-5">Answer 3</li>
-                            <li class="list-group-item py-5">Answer 4</li>
+                            <li class="list-group-item py-5" id="answer0">Answer 0</li>
+                            <li class="list-group-item py-5" id="answer1">Answer 1</li>
+                            <li class="list-group-item py-5" id="answer2">Answer 2</li>
+                            <li class="list-group-item py-5" id="answer3">Answer 3</li>
                         </ul>
                     </div>
                 </div>
                 <hr>
-                <div class="h1 text-dark text-center">Correct
+                <div class="h1 text-dark text-center" id="start">Start Quiz
+                <div class="h1 text-dark text-center" id="result">Correct
                 <hr>
-                <a class="h3 text-dark text-center">View Highscores</a>
+                <a class="h3 text-dark text-center" id="leaderboard">View Highscores</a>
             <div class="col-3"></div>    
             </div>
         </div>
