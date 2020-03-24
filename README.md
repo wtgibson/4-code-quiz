@@ -25,7 +25,7 @@ THEN I can save my initials and score
 ```
 
 ## Site Picture
-![Site](password-generator.png)
+![Site](04-web-apis-homework-demo.gif)
 
 ## Technologies Used
 - HTML - used to create elements on the DOM
