@@ -1,7 +1,9 @@
 html {
   /* rem is relative to the fontsize of an element. The default fontsize on most browsers is 16px; */
 
-  font-size: 62.5%; 1rem = 10px
+  font-size: 62.5%; 
+  
+  /* 1rem = 10px */
 
   /* this makes it a lot easier to calcute rem. 62.5 is 10/16 so our defualt fontsize is relative to user settings. defines what 1 rem is. So now, instead of 10px, we can write 1rem, Instead of 200px, we can write 20rem, etc..
     
