@@ -36,7 +36,7 @@ var quizQuestions = [
     correct: "Tesla Roadster"
   },
   {
-    question: "What What animal is on the Lamborghini logo?",
+    question: "What animal is on the Lamborghini logo?",
     answer: ["Horse", "Lion", "Bull", "Bird"],
     correct: "Bull"
   }
