@@ -15,12 +15,9 @@ body {
 
 #background {
   background-image: url(https://images.designtrends.com/wp-content/uploads/2015/11/06085041/Ferrari-Car-Back-View-Backgrounds.jpg);
-  height: auto;
-  width: auto;
-}
-
-#question {
-  visibility: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 85rem;
 }
 
 #start {
@@ -28,9 +25,10 @@ body {
 }
 
 #result {
-  visibility: hidden;
+    visibility: visible;
+    color: black;
 }
 
-#leaderboard {
-    visibility: hidden;
+#leaderboard-link {
+    visibility: visible;
 }
