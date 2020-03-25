@@ -2,7 +2,7 @@
 
 ## Summary 
 
-The purpose of the assignment was to create an application that generates a random password based on a set of user-selected criteria. The application developed is accessed via the user's browser and includes HTML and CSS code that is dynamically udpated through JavaScript elements as well as a polished UI that is repsonsive to multiple screen sizes.
+The purpose of the assignment was to create a timed quiz which leveraged Javascript logic, functions, and variables which dynamically updated the user's score based on their performance, ultimately letting them save their initals and score.
 
 ```
 User Story
@@ -25,7 +25,7 @@ THEN I can save my initials and score
 ```
 
 ## Site Picture
-![Site](04-web-apis-homework-demo.gif)
+![Site](car-quiz.png)
 
 ## Technologies Used
 - HTML - used to create elements on the DOM
@@ -37,65 +37,44 @@ THEN I can save my initials and score
 
 ## Code Snippet
 
-Below is an example of a block of code in the JS file where I created a function leveraging the While loop to determine how many random digits of each kind should be included in the generated password. It includes nested If/Else statements evaluating whether each set of characters value were set to True by the user as well as keep track of the current digit count of the generated password ceasing to add digits when it gets to the number the user chose for the length in the first prompt.
+Below is an example of a block of code in the JS file where most of the logic behind the quiz is stored. First I created a function enacted on the user's click on an answer choice checking it against the answer key to the question then displayed whether it was correct or incorrect in the result field and added or subtracted points accordingly. 
 
 ```js
-function generatePasswordCharacters() {
-    
-    console.log(generatedPassword.length)
+answersElement.addEventListener("click", function(event) {
+    console.log("answer chosen");
+    var element = event.target;
+    if (element.textContent !== quizQuestions[i].correct) {
+        console.log(element)
+        console.log("Wrong Answer")
+        resultElement.textContent = "Incorrect!";
+        console.log(resultElement.textContent)
+        document.getElementById("result").style.color = 'red';            
+        console.log(resultElement.style.color)
 
-    console.log(passwordLengthInteger)
+    } else {
+        console.log(element)
+        console.log("Right Answer")
+        resultElement.textContent = "Correct!";
+        console.log(resultElement.textContent)
+        document.getElementById("result").style.color = 'green';            
+        console.log(resultElement.style.color)
+        userScore += 10
+        console.log(userScore)
 
-    while (generatedPassword.length < passwordLengthInteger) {
-        
-        console.log(generatedPassword.length)
-
-        console.log(passwordLengthInteger)
-        
-        if (lowerCaseCharacters === true && generatedPassword.length < passwordLengthInteger) {
-            randomLowerCase();
-
-            console.log("generatedPassword.length = " + generatedPassword.length)
-
-            console.log("passwordLengthInteger = " + passwordLengthInteger)
-        }
-
-        else {null};
-
-        if (upperCaseCharacters === true && generatedPassword.length < passwordLengthInteger) {
-            randomUpperCase();
-            
-            console.log("generatedPassword.length = " + generatedPassword.length)
-
-            console.log("passwordLengthInteger = " + passwordLengthInteger)
-        }
-
-        else {null};
-
-        if (numericCharacters === true && generatedPassword.length < passwordLengthInteger) {
-            randomNumericCase();
-
-            console.log("generatedPassword.length = " + generatedPassword.length)
-
-            console.log("passwordLengthInteger = " + passwordLengthInteger)
-        }
-
-        else {null};
-
-        if (specialCharacters === true && generatedPassword.length < passwordLengthInteger) {
-            randomSpecialCase();
-
-            console.log("generatedPassword.length = " + generatedPassword.length)
-
-            console.log("passwordLengthInteger = " + passwordLengthInteger)
-        }
-
-        else {null};
-        
     }
-
-    alert(generatedPassword)
-}
+    if (i < quizQuestions.length - 1) {
+    i++;
+    quiz();
+    } else {
+    clearInterval(timeInterval)    
+    alert("Quiz Complete!");
+    userScore += secondsLeft
+    console.log(userScore)
+    alert(userScore);
+    endQuiz();
+    restartQuiz();
+    }
+});
 ```
 
 ## Author Links

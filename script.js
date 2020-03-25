@@ -45,7 +45,9 @@ var quizQuestions = [
 
 var i = 0;
 var timeInterval;
-var secondsLeft = 50;
+var secondsLeft = 5;
+var userScore = 0;
+var highScore = 0;
 
 function setTime() {
   console.log("setTime function");
@@ -56,7 +58,9 @@ function setTime() {
     if (secondsLeft <= 0) {
       clearInterval(timeInterval);
       alert("Times Up!");
-      endQuiz()
+      alert("User Score is " + userScore);
+      endQuiz();
+      restartQuiz();
     }
   }, 1000);
 };
@@ -67,13 +71,16 @@ function endQuiz() {
   answer1Element.textContent = "b";
   answer2Element.textContent = "c";
   answer3Element.textContent = "d";
+  resultElement.textContent = "-";
 
-//   startElement.style.visibility = "hidden";
-  startElement.textContent = "Restart Quiz";
-//   resultElement.style.visibility = "hidden";
-  i = 0;
-  secondsLeft = 50;
 };
+
+function restartQuiz() {
+    i = 0;
+    secondsLeft = 5;
+    userScore = 0
+    startElement.textContent = "Start Quiz";
+}
 
 function quiz() {
   console.log("Quiz Q&A # " + i);
@@ -86,31 +93,43 @@ function quiz() {
 
 startElement.addEventListener("click", function(event) {
   event.preventDefault();
-//   startElement.style.visibility = "visible";
-  startElement.textContent = "-";
+  startElement.textContent = "";
   setTime();
   quiz(event);
 });
 
-// answerChoice.forEach(function (button) {
-    answersElement.addEventListener("click", function(event) {
-        console.log("answer chosen");
-        var element = event.target;
-        if (element.textContent !== quizQuestions[i].correct) {
-            console.log("Wrong Answer")
-            resultElement.textContent = "Incorrect!";
-            resultElement.style.color = "red";
-        } else {
-            console.log("Right Answer")
-            resultElement.textContent = "Correct!";
-            resultElement.style.color = "green";
-        }
-        if (i < quizQuestions.length - 1) {
-        i++;
-        quiz();
-        } else {
-        clearInterval(timeInterval)    
-        endQuiz();
-        }
-    });
-// });
+answersElement.addEventListener("click", function(event) {
+    console.log("answer chosen");
+    var element = event.target;
+    if (element.textContent !== quizQuestions[i].correct) {
+        console.log(element)
+        console.log("Wrong Answer")
+        resultElement.textContent = "Incorrect!";
+        console.log(resultElement.textContent)
+        document.getElementById("result").style.color = 'red';
+        userScore -= 5           
+        console.log(resultElement.style.color)
+
+    } else {
+        console.log(element)
+        console.log("Right Answer")
+        resultElement.textContent = "Correct!";
+        console.log(resultElement.textContent)
+        document.getElementById("result").style.color = 'green';            
+        console.log(resultElement.style.color)
+        userScore += 10
+        console.log(userScore)
+
+    }
+    if (i < quizQuestions.length - 1) {
+    i++;
+    quiz();
+    } else {
+    clearInterval(timeInterval)    
+    alert("Quiz Complete!");
+    userScore += secondsLeft
+    alert("User Score is " + userScore);
+    endQuiz();
+    restartQuiz();
+    }
+});
