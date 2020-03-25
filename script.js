@@ -93,7 +93,7 @@ startElement.addEventListener("click", function(event) {
 });
 
 // answerChoice.forEach(function (button) {
-    answerChoice.addEventListener("click", function(event) {
+    answersElement.addEventListener("click", function(event) {
         console.log("answer chosen");
         var element = event.target;
         if (element.textContent !== quizQuestions[i].correct) {
